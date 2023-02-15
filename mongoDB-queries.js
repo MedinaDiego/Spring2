@@ -21,4 +21,26 @@
 
 //10. db.restaurantes.aggregate([ {$project: {name:1,"address.coord":1}}, {$unwind:"$address.coord"}, {$match: {"address.coord":{$lt:-95.754168}}} ])
 
-//11
+//11. db.restaurantes.find({cuisine:{$ne:"American "},"address.coord.0":{$lt:-65.754168},"grades.score":{$gt:70}})
+
+//12. db.restaurantes.find({cuisine:{$ne:"American "},"address.coord.0":{$lt:-65.754168},"grades.score":{$gt:70}})
+
+//13. db.restaurantes.find({cuisine:{$ne:"American "}, "grades.grade":"A", borough:{$ne:"Brooklyn"}}).sort({cuisine:-1})
+
+//14. db.restaurantes.find({name:/^Wil/},{borough:1,cuisine:1,name:1,restaurant_id:1})
+
+//15. db.restaurantes.find({name:/ces$/},{borough:1,cuisine:1,name:1,restaurant_id:1})
+
+//16.  db.restaurantes.find({name:/Reg/},{borough:1,cuisine:1,name:1,restaurant_id:1})
+
+//17. db.restaurantes.find({ borough:"Bronx",$or:[{cuisine:"American "}, {cuisine: "Chinese"}]})
+
+//18. db.restaurantes.find({$or:[{borough:"Bronx"}, {borough:"Queens"}, {borough:"Staten Island"}, {borough:"Brooklyn"}]},{borough:1,cuisine:1,name:1,restaurant_id:1})
+
+//19. db.restaurantes.find( {$and:[{borough:{$ne:"Bronx"}}, {borough:{$ne:"Queens"}}, {borough:{$ne:"Brooklyn"}}, {borough:{$ne:"Staten Island"}}]}, {borough:1,cuisine:1,name:1,restaurant_id:1}  )
+
+//20. db.restaurantes.aggregate([{$project:{ nota:{$avg:"$grades.score"},restaurant_id:1, name:1, borough:1, cuisine:1}}, {$match:{"nota":{$lt:10} }} ])
+
+//21. db.restaurantes.find(   )
+
+//22. db.restaurantes.find(   )
