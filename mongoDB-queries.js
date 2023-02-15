@@ -41,6 +41,26 @@
 
 //20. db.restaurantes.aggregate([{$project:{ nota:{$avg:"$grades.score"},restaurant_id:1, name:1, borough:1, cuisine:1}}, {$match:{"nota":{$lt:10} }} ])
 
-//21. db.restaurantes.find(   )
+//21. db.restaurantes.find({$or: [{ cuisine: { $eq: 'Seafood' }},{ cuisine: { $eq: 'American ' }},{ cuisine: { $eq: 'Chinese' }},{ name: RegExp("^Wil")}]}, {restaurant_id:1,cuisine: 1,name: 1, borough:1})
 
-//22. db.restaurantes.find(   )
+//22. db.restaurantes.find({"grades.score":11, "grades.grade": "A", "grades.date": ISODate('2014-08-11T00:00:00Z')}, {restaurant_id:1,cuisine: 1,name: 1, borough:1})
+
+//23. db.restaurantes.aggregate([ {$project:{ Grau:{$arrayElemAt:["$grades.grade",1] }, name:1, grades:1, restaurant_id:1} }, {$match:{$and:[{Grau:"A"},{grades:{$elemMatch:{score:9}}}, {"grades.date":ISODate('2014-08-11T00:00:00Z')} ]}} ])
+
+//24. 
+
+//25. db.restaurantes.find({},{name:1}).sort({name:1})
+
+//26. db.restaurantes.find({},{name:1}).sort({name:-1})
+
+//27.
+
+//28.
+
+//29.
+
+//30.
+
+//31.
+
+//32.
